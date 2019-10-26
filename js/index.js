@@ -53,7 +53,7 @@ var getLocation = function() {
 
 var getWeather = function (lat, lon){
     $.ajax({
-      url: "http://api.openweathermap.org/data/2.5/weather",
+      url: "https://api.openweathermap.org/data/2.5/weather",
       method: "GET",
       data: {"lat":lat,"lon":lon,"APPID":"7a095bca640374d3a4764e2b7565f97d", "units":"metric"},
       cache: false,
