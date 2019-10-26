@@ -24,7 +24,15 @@ var getDate = function (){
   return today;
 }
 
-var getLocation = function (){
+var getLocation = function() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(position => {
+      console.log(position.coords);
+      lat = position.coords.latitude;
+      lon = position.coords.longitude;
+      getWeather(lat, lon);
+    });
+  } else {
    $.ajax({
       url: "http://ip-api.com/json",
       method: "GET",
@@ -40,6 +48,7 @@ var getLocation = function (){
    .fail(function() {
       //$('.alert-danger').show();
   });
+  }
 };
 
 var getWeather = function (lat, lon){
