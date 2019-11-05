@@ -88,6 +88,7 @@ var getWeather = function (lat, lon){
   case "snow": //Nieve
     $('.flurries').show();
     break;
+  case "clouds":
   case "broken clouds": //Nublado   
   case "scattered clouds":  //Nubes aisladas
   case "few clouds": //Nubes y claros
